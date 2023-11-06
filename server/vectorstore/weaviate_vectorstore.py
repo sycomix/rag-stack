@@ -143,7 +143,7 @@ class WeaviateVectorStore(VectorStore):
 
         results = results["data"]["Get"][self.collection_name]
 
-        results = [
+        return [
             PsychicDocument(
                 id=result["doc_id"],
                 title=result["title"],
@@ -152,5 +152,3 @@ class WeaviateVectorStore(VectorStore):
             )
             for result in results
         ]
-
-        return results
